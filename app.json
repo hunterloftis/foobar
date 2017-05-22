@@ -1,0 +1,34 @@
+{
+    "name": "Dreamhouse Salesforce DX Demo",
+    "description": "Dreamforce Force.com Application demonstrating Salesforce DX and Heroku Integration",
+    "repository": "https://github.com/forcedotcom/sfdx-dreamhouse",
+    "logo": "https://avatars0.githubusercontent.com/u/464563?v=3&s=200",
+    "keywords": [
+        "salesforce",
+        "salesforcedx",
+        "force.com",
+        "heroku"
+    ],
+    "addons": [
+        "salesforce"
+    ],
+    "buildpacks": [
+        {
+            "url": "https://github.com/heroku/salesforce-buildpack"
+        }
+    ],
+    "env": {
+        "HEROKU_APP_NAME": {
+            "description": "Provided to buildpacks by the Heroku platform when required:true. Need for Pipelines stage-awareness.",
+            "required": true
+        },
+        "SFDX_DEV_HUB_AUTH_URL": {
+            "description": "Required to provision orgs for Review apps and Heroku CI",
+            "required": true
+        }
+        "SFDX_AUTH_URL": {
+            "description": "Required to connect orgs for staging and production apps",
+            "required": true
+        }
+    }
+}
